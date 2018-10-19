@@ -1,12 +1,10 @@
 TODO:
 
-HW3:
-Get json_pp to work.
+HW8:
+Needs to finish and hand in.
 
-Note that the dir of the fortune files is /tmp/ (i.e. root -> tmp).
+t13:
+Add the small description in the file, as well as implement the VG part of the exercise.
 
-HW4:
-Only need to upload HW3 and submit pull request.
-
-HW5:
-In progress.
+t14:
+To be started on.

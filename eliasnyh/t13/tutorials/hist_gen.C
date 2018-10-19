@@ -1,6 +1,8 @@
+#include <TStyle.h>
+
+
 void hist_gen()
 {
-	#include <TStyle.h>
   TH1D* hist = new TH1D("hist", "Histogram", 40, -3, 3);
   hist->Sumw2();
   

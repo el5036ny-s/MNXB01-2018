@@ -1,23 +1,29 @@
-void hist_gen()
+#include <TH1.h>
+#include <TF1.h>
+
+#include <TStyle.h>
+
+void hist_gen_mod(int nRandom, double sigma)
 {
-	#include <TStyle.h>
   TH1D* hist = new TH1D("hist", "Histogram", 40, -3, 3);
-  hist->Sumw2();
   
-  gStyle->SetOptFit();
+  
+  //gStyle->SetOptFit();
   
   TF1* fGaus = new TF1("fGaus", "gaus", -3, 3);
-  fGaus->SetParameters(1, 0, 1); // amplitude, mean, sigma
+  fGaus->SetParameters(1, 0, sigma); // amplitude, mean, sigma
 
-  for(Int_t i = 0; i < 10000; i++) {
+  for(Int_t i = 0; i < nRandom; i++) {
 
     hist->Fill(fGaus->GetRandom());
   }
+  
+hist->SetMinimum(0);	
+hist->Sumw2();
+hist->Draw();
+hist->Fit("pol2");
 
-  hist->Draw();
 }
 
 //TH1D* hist = ...
-//hist->Sumw2();
 //gStyle->SetOptFit();
-// also do #include <Tstyle.h>
