@@ -25,7 +25,7 @@ using namespace std;
 void rootfuncgenerate(Int_t nEvents, Int_t nTracks, Double_t v2); // ROOT method (a bit dangerous since we don't know exactly what happens!)
 
 
-//________________________________________________________________________
+//_______________________________________________________________________
 void rootfuncgenerate(Int_t nEvents, Int_t nTracks, Double_t v2)
 {
 	
@@ -51,13 +51,17 @@ void rootfuncgenerate(Int_t nEvents, Int_t nTracks, Double_t v2)
 	}
   
   // open output file
+  
+  
+  
+  
   ofstream file("phi_dist.dat");
   
   // make a loop for the number of events
   for(Int_t n = 0; n < nEvents; n++) {
     
     
-    file << "event " << n << endl << "nTracks " << nTracks << endl;
+    file << "Event " << n << endl << "nTracks " << nTracks << endl;
     
     for(Int_t i = 0; i < nTracks; i++)
     {
@@ -65,6 +69,10 @@ void rootfuncgenerate(Int_t nEvents, Int_t nTracks, Double_t v2)
     file << i << " : " << phi[i] << endl;
 	} 
   }
+  
+  // close file
+  file.close();
+  
   
   // Set ROOT drawing styles
   gStyle->SetOptStat(1111);
@@ -85,4 +93,23 @@ void rootfuncgenerate(Int_t nEvents, Int_t nTracks, Double_t v2)
   
   // Save the canvas as a picture
   c1->SaveAs("v2_rootfunc.jpg");
+}
+
+
+void boxgenerate(Int_t nEvents, Int_t nTracks, Double_t v2) {
+	Double_t r;
+	
+	for(int i = 0; i < 1000; i++){
+	cout << (Double_t) rand() / RAND_MAX << endl;
+
+}
+
+	
+	
+	
+	
+	
+	
+	
+	
 }
