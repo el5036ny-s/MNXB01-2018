@@ -43,7 +43,12 @@ void rootfuncgenerate(Int_t nEvents, Int_t nTracks, Double_t v2)
   
   Double_t phi[nTracks]; // array to store phi angles
 	
-	
+	// generate nTracks phi angles
+	for (Int_t nt = 0; nt < nTracks; nt++) 
+	{
+	// Fill the array
+	phi[nt] = v2Func->GetRandom();
+	}
   
   // open output file
   
@@ -55,15 +60,8 @@ void rootfuncgenerate(Int_t nEvents, Int_t nTracks, Double_t v2)
   // make a loop for the number of events
   for(Int_t n = 0; n < nEvents; n++) {
     
+    
     file << "Event " << n << endl << "nTracks " << nTracks << endl;
-    
-    // generate nTracks phi angles
-	for (Int_t nt = 0; nt < nTracks; nt++) 
-	{
-	// Fill the array
-	phi[nt] = v2Func->GetRandom();
-	}
-    
     
     for(Int_t i = 0; i < nTracks; i++)
     {
