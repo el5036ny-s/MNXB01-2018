@@ -1,0 +1,3 @@
+I did not manage to get these macros to work correctly. It spits out a bunch of errors when trying to compile EG_v2_tree.C. I did not manage to analyze the erros properly, and I have been too busy to look more into it.
+
+I have not included any file Analyze_v2_tree.C, since I did not get the first part (EG) to work properly.
